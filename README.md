@@ -27,4 +27,4 @@ load RSVP data
 
     ./myscript.sh | kafka-console-producer --broker-list ip-172-31-94-165.ec2.internal:9092, ip-172-31-91-232.ec2.internal:9092, ip-172-31-89-11.ec2.internal:9092 --topic rsvp_ivan
 
-myscript.sh [click here](~/kafka_project/myscript.sh)
+myscript.sh [click here](https://github.com/1van0705/Kafka_project/blob/master/myscript.sh)
