@@ -1,7 +1,3 @@
----
-title: "DE_project_Kafka_SparkStreaming"
-tags: ""
----
 
 # DE_project_Kafka_SparkStreaming
 
