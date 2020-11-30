@@ -102,7 +102,7 @@ val eventDF = DF3.select(from_json(col("value"), static.schema).as("data"), col(
 
 ![](screen-shot-2020-11-04-at-4-50-46-pm-kh3xr5bo.png)
 
-4.  Show how many events are receivedfor each country, display it in a slidingwindow(set windowDuration to 3 minutes and slideDuration to 1 minutes).  Show result at 1-minute interval.  Use "kafka" source and "console" sink.Set outputMode to "complete". Here is a sampleoutput.
+4.  Show how many events are receivedfor each country, display it in a slidingwindow(set windowDuration to 3 minutes and slideDuration to 1 minutes).  Show result at 1-minute interval.  Use "kafka" source and "console" sink.Set outputMode to "complete". !(https://github.com/1van0705/Kafka_project/blob/master/picture_2)
 
 ```scala
 
