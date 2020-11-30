@@ -79,7 +79,7 @@ import org.apache.spark.sql.streaming.Trigger
 val write_parquet = eventDF.writeStream.trigger(Trigger.ProcessingTime("60 seconds")).format("parquet").option("path", "/user/ivan0705/kafka_project/Q42").option("checkpointLocation", "/user/ivan0705/spark_streaming/checkpoint_2").outputMode("append").start.awaitTermination
 ```
 
-3.  Show how many events are received, display in a 2-minute tumbling window.  Show result at 1-minute interval.  Use "kafka"source and "console"sink.Set outputMode to "complete". Here is a sampleoutput.
+3.  Show how many events are received, display in a 2-minute tumbling window.  Show result at 1-minute interval.  Use "kafka"source and "console"sink.Set outputMode to "complete". ![Here is a sampleoutput](https://github.com/1van0705/Kafka_project/blob/master/picture_1)
 
 ```scala
 
