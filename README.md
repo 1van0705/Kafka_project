@@ -79,7 +79,7 @@ import org.apache.spark.sql.streaming.Trigger
 val write_parquet = eventDF.writeStream.trigger(Trigger.ProcessingTime("60 seconds")).format("parquet").option("path", "/user/ivan0705/kafka_project/Q42").option("checkpointLocation", "/user/ivan0705/spark_streaming/checkpoint_2").outputMode("append").start.awaitTermination
 ```
 
-3.  Show how many events are received, display in a 2-minute tumbling window.  Show result at 1-minute interval.  Use "kafka"source and "console"sink.Set outputMode to "complete". ![Here is a sampleoutput](https://github.com/1van0705/Kafka_project/blob/master/picture_1 "sample output")
+3.  Show how many events are received, display in a 2-minute tumbling window.  Show result at 1-minute interval.  Use "kafka"source and "console"sink.Set outputMode to "complete". Here is a sample output![Q3 sample result](https://github.com/1van0705/Kafka_project/blob/master/picture_1 "sample output")
 
 ```scala
 
@@ -100,9 +100,8 @@ val eventDF = DF3.select(from_json(col("value"), static.schema).as("data"), col(
 
 ```
 
-![](screen-shot-2020-11-04-at-4-50-46-pm-kh3xr5bo.png)
 
-4.  Show how many events are receivedfor each country, display it in a slidingwindow(set windowDuration to 3 minutes and slideDuration to 1 minutes).  Show result at 1-minute interval.  Use "kafka" source and "console" sink.Set outputMode to "complete". ![sample results](https://github.com/1van0705/Kafka_project/blob/master/picture_2)
+4.  Show how many events are receivedfor each country, display it in a slidingwindow(set windowDuration to 3 minutes and slideDuration to 1 minutes).  Show result at 1-minute interval.  Use "kafka" source and "console" sink.Set outputMode to "complete". Here is a sample output ![Q4 sample results](https://github.com/1van0705/Kafka_project/blob/master/picture_2 "sample output")
 
 ```scala
 
@@ -125,7 +124,6 @@ eventDF.groupBy(col("group.group_country"), window(col("event_time"), "3 minutes
 
 ```
 
-![](screen-shot-2020-11-04-at-5-09-19-pm-kh3yesyp.png)
 
 5.  Use impala to create a KUDU table. Do dataframe transformation to extract information and write to the KUDU table. Use "kafka"source and "kudu"sink.    
 
